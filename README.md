@@ -1,97 +1,100 @@
 # AI NutriCoach
 
-AI NutriCoach is an AI-powered nutrition assistant that leverages advanced vision models and natural language processing to detect ingredients from food images, filter ingredients based on dietary restrictions, estimate calories, provide detailed nutrient analysis, and generate recipe suggestions. This project demonstrates the use of CrewAI, WatsonX, and other AI tools to deliver insightful and personalized nutritional feedback.
+AI NutriCoach is an AI-powered nutrition assistant that utilizes advanced vision models and natural language processing to analyze food images. It detects ingredients, filters them based on dietary restrictions, estimates calories, provides a detailed nutrient breakdown, and generates personalized recipe suggestions. This project showcases the integration of **CrewAI**, **WatsonX**, and other AI tools to deliver insightful and customized nutritional feedback.
 
 ## Features
 
 - **Ingredient Detection**  
-  Detects ingredients from user-uploaded images using a vision AI model.
+  Automatically detects ingredients from user-uploaded food images using an AI-powered vision model.
 
 - **Dietary Filtering**  
-  Filters detected ingredients based on user-defined dietary restrictions (e.g., vegan, gluten-free).
+  Filters identified ingredients based on user-defined dietary restrictions (e.g., vegan, gluten-free, low-carb).
 
 - **Calorie Estimation**  
-  Estimates total calories from the detected ingredients.
+  Provides an approximate calorie count based on detected ingredients.
 
 - **Nutrient Analysis**  
-  Provides a detailed breakdown of key nutrients such as protein, carbohydrates, fats, vitamins, and minerals.
+  Offers a detailed breakdown of key nutrients, including proteins, carbohydrates, fats, vitamins, and minerals.
 
 - **Health Evaluation**  
-  Summarizes the overall healthiness of the meal and provides a health evaluation.
+  Summarizes the overall healthiness of the meal and provides a comprehensive health score.
 
-- **Recipe Suggestion**  
-  Generates recipe ideas based on the filtered ingredients and dietary restrictions.
+- **Recipe Suggestions**  
+  Generates personalized recipe recommendations based on detected ingredients and dietary preferences.
 
 ## How It Works
 
-The project is built using the CrewAI framework, which organizes agents and tasks into workflows for two primary use cases:
+The project is structured using the **CrewAI** framework, which manages AI agents and workflows to perform two primary tasks:
 
 1. **Recipe Workflow**  
-   Detects ingredients, filters them based on dietary restrictions, and suggests recipes.
+   - Detects ingredients from an image.
+   - Filters them based on dietary restrictions.
+   - Suggests relevant recipes.
 
 2. **Analysis Workflow**  
-   Directly estimates calories, performs nutrient analysis, and provides a health evaluation summary from a food image.
+   - Estimates calories from a food image.
+   - Performs nutrient analysis.
+   - Provides a health evaluation summary.
 
 ## Installation
 
 ### Prerequisites
 
 - Python 3.8+
-- Virtual environment 
+- Virtual environment (recommended)
 - Git
 
 ### Setup Instructions
 
-1. **Clone the repository**:
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/shashidharbabu/ai-nutricoach.git
    ```
-2. **Create and activate a virtual environment**:
-  ```bash
-  python -m venv venv
-  source venv/bin/activate  # On Windows: venv\Scripts\activate
-  ```
-3. **Install the required dependencies:**
-  ```bash
-  pip install -r requirements.txt
-  ```
-4. **Create a .env file in the root directory with the following keys**:
+
+2. **Create and activate a virtual environment:**
    ```bash
-    WATSONX_API_KEY=your_watsonx_api_key
-    WATSONX_URL=your_watsonx_url
-    WATSONX_PROJECT_ID=your_watsonx_project_id
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
+
+3. **Install the required dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Set up environment variables:**
+   - Create a `.env` file in the root directory and add the following:
+   ```ini
+   WATSONX_API_KEY=your_watsonx_api_key
+   WATSONX_URL=your_watsonx_url
+   WATSONX_PROJECT_ID=your_watsonx_project_id
+   ```
+
 ## Usage
-### Run the Application
 
-You can run the application using the following commands:
+### Running the Application
 
-1. For recipe suggestions
+To analyze a food image or generate recipe suggestions, use the following commands:
 
+#### 1. Generate Recipe Suggestions
 ```bash
 python main.py <image_path> <dietary_restrictions> recipe
 ```
-
-Example:
-
+**Example:**
 ```bash
 python main.py food.jpg vegan recipe
 ```
 
-2. For food analysis
-
+#### 2. Perform Food Analysis
 ```bash
 python main.py <image_path> analysis
 ```
-
-Example:
-
+**Example:**
 ```bash
 python main.py food.jpg analysis
 ```
 
-3. For training (future functionality - TODO)
-
+#### 3. Training (Future Feature - TODO)
 ```bash
 python main.py train <n_iterations> <output_filename> <image_path> <dietary_restrictions> <workflow_type>
 ```
@@ -99,21 +102,24 @@ python main.py train <n_iterations> <output_filename> <image_path> <dietary_rest
 ## File Structure
 
 ```
-Smart-Nutritional-App-Crew/
+ai-nutricoach/
 │
 ├── config/
-│   ├── agents.yaml               # Configuration for agents
-│   └── tasks.yaml                # Configuration for tasks
+│   ├── agents.yaml               # Configuration for AI agents
+│   └── tasks.yaml                # Configuration for tasks and workflows
 │
 ├── src/
 │   ├── crew.py                   # Crew definitions (agents, tasks, workflows)
-│   ├── tools.py                  # Tool definitions for ingredient detection, filtering, etc.
-│   └── main.py                   # Main script for running the application
+│   ├── tools.py                   # Utility functions for ingredient detection, filtering, etc.
+│   └── main.py                    # Main script to run the application
 │
-├── requirements.txt              # Python dependencies
-└── README.md                     # Project documentation
+├── requirements.txt               # Python dependencies
+└── README.md                      # Project documentation
 ```
 
-# Credits:
+## Credits
 
-This project is ideated and inspired from Hailey Q's work and her talk on Multimodal AI talk at IBM TechXchange Dev Event. For any questions or support, please contact [Hailey Thao Quach](mailto:hailey@haileyq.com). 
+This project was inspired by **Hailey Q’s** work and her talk on **Multimodal AI** at the **IBM TechXchange Dev Event**.
+
+For inquiries or support, please contact [Hailey Thao Quach](mailto:hailey@haileyq.com).
+
