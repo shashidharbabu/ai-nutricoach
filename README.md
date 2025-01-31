@@ -115,4 +115,5 @@ Smart-Nutritional-App-Crew/
 ```
 
 # Credits:
-For any questions or support, please contact [Hailey Thao Quach](mailto:hailey@haileyq.com). This project is ideated and inspired from Hailey Q's work and talk at IBM TechXchange Dev Event.
+
+This project is ideated and inspired from Hailey Q's work and her talk on Multimodal AI talk at IBM TechXchange Dev Event. For any questions or support, please contact [Hailey Thao Quach](mailto:hailey@haileyq.com). 
