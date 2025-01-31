@@ -1,4 +1,4 @@
-# AI NutriCoach
+# AI NutriCoach - Builing Nutrition Coach using Multi-Agent System (MAS) and multimodal AI
 
 AI NutriCoach is an AI-powered nutrition assistant that utilizes advanced vision models and natural language processing to analyze food images. It detects ingredients, filters them based on dietary restrictions, estimates calories, provides a detailed nutrient breakdown, and generates personalized recipe suggestions. This project showcases the integration of **CrewAI**, **WatsonX**, and other AI tools to deliver insightful and customized nutritional feedback.
 
